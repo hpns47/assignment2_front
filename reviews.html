@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MangaLib - Отзывы</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="top-banner">
+      <h1 class="header-section">Отзывы читателей</h1>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contact.html">Контакты</a>
+        <a href="reviews.html">Отзывы</a>
+      </nav>
+    </header>
+
+  <main class="container">
+    <section aria-labelledby="reviews-heading">
+      <h3 id="reviews-heading" class="visually-hidden">Список отзывов</h3>
+      <div id="reviews" class="reviews-grid">
+        <article class="review-card" aria-label="Отзыв пользователя Али">
+          <div class="review-card__head">
+            <div class="review-card__avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="review-card__name">Ali</div>
+              <time class="review-card__date" datetime="2025-09-21">21.09.2025</time>
+            </div>
+          </div>
+          <div class="review-card__stars" aria-label="Оценка 5 из 5" role="img">★★★★★</div>
+          <h4 class="review-card__title">One Piece — топ!</h4>
+          <p class="review-card__text">Большая вселенная, харизматичные персонажи. Магазин отправил быстро, упаковка супер.</p>
+        </article>
+
+        <article class="review-card" aria-label="Отзыв пользователя Алина">
+          <div class="review-card__head">
+            <div class="review-card__avatar" aria-hidden="true">А</div>
+            <div>
+              <div class="review-card__name">Алина</div>
+              <time class="review-card__date" datetime="2025-09-20">20.09.2025</time>
+            </div>
+          </div>
+          <div class="review-card__stars" aria-label="Оценка 4 из 5" role="img">★★★★☆</div>
+          <h4 class="review-card__title">Наруто</h4>
+          <p class="review-card__text">Качество печати отличное. Хотелось бы больше мерча по Наруто в каталоге.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="review-form__wrap" aria-labelledby="form-heading">
+      <h3 id="form-heading">Оставить отзыв</h3>
+      <form id="reviewForm" class="review-form" novalidate>
+        <div class="form-row">
+          <label for="name">Имя*</label>
+          <input id="name" name="name" type="text" required maxlength="40" placeholder="Ваше имя" />
+          <div class="field-hint" data-for="name"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="title">Заголовок*</label>
+          <input id="title" name="title" type="text" required maxlength="80" placeholder="Коротко о главном" />
+          <div class="field-hint" data-for="title"></div>
+        </div>
+
+        <div class="form-row">
+          <label for="text">Отзыв*</label>
+          <textarea id="text" name="text" required rows="5" maxlength="800" placeholder="Поделитесь впечатлениями"></textarea>
+          <div class="field-hint" data-for="text"></div>
+        </div>
+
+        <div class="form-row">
+          <span class="label">Оценка*</span>
+          <div class="stars-input" role="radiogroup" aria-label="Выберите оценку">
+            <input type="radio" id="rate5" name="rating" value="5" required />
+            <label for="rate5" title="5">★</label>
+            <input type="radio" id="rate4" name="rating" value="4" />
+            <label for="rate4" title="4">★</label>
+            <input type="radio" id="rate3" name="rating" value="3" />
+            <label for="rate3" title="3">★</label>
+            <input type="radio" id="rate2" name="rating" value="2" />
+            <label for="rate2" title="2">★</label>
+            <input type="radio" id="rate1" name="rating" value="1" />
+            <label for="rate1" title="1">★</label>
+          </div>
+          <div class="field-hint" data-for="rating"></div>
+        </div>
+
+        <div class="form-row checkbox-row">
+          <label>
+            <input type="checkbox" id="consent" required />
+            Согласен(на) с обработкой персональных данных*
+          </label>
+          <div class="field-hint" data-for="consent"></div>
+        </div>
+
+        <button class="btn" type="submit">Отправить отзыв</button>
+        <p class="form-note">* — обязательные поля</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Abdrakhmanov Daniyar & Boranbayev Danial | SE-2408</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('reviewForm');
+    const list = document.getElementById('reviews');
+
+    function setError(id, msg) {
+      const hint = document.querySelector('.field-hint[data-for="' + id + '"]');
+      if (hint) hint.textContent = msg || '';
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const title = form.title.value.trim();
+      const text = form.text.value.trim();
+      const rating = form.rating.value;
+
+      let ok = true;
+      if (!name) { setError('name', 'Введите имя'); ok = false; } else setError('name');
+      if (!title) { setError('title', 'Введите заголовок'); ok = false; } else setError('title');
+      if (!text) { setError('text', 'Напишите отзыв'); ok = false; } else setError('text');
+      if (!rating) { setError('rating', 'Выберите оценку'); ok = false; } else setError('rating');
+      if (!document.getElementById('consent').checked) { setError('consent', 'Нужно согласие'); ok = false; } else setError('consent');
+
+      if (!ok) return;
+
+      const article = document.createElement('article');
+      article.className = 'review-card';
+      const date = new Date();
+      const pad = (n)=>String(n).padStart(2,'0');
+      const dateStr = `${pad(date.getDate())}.${pad(date.getMonth()+1)}.${date.getFullYear()}`;
+
+      const avatarLetter = (name[0] || '?').toUpperCase();
+      const stars = '★★★★★'.slice(0, rating) + '☆☆☆☆☆'.slice(0, 5 - rating);
+
+      article.innerHTML = `
+        <div class="review-card__head">
+          <div class="review-card__avatar" aria-hidden="true">${avatarLetter}</div>
+          <div>
+            <div class="review-card__name">${name}</div>
+            <time class="review-card__date">${dateStr}</time>
+          </div>
+        </div>
+        <div class="review-card__stars" aria-label="Оценка ${rating} из 5" role="img">${stars}</div>
+        <h4 class="review-card__title">${title}</h4>
+        <p class="review-card__text"></p>
+      `;
+      article.querySelector('.review-card__text').textContent = text;
+
+      list.prepend(article);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
