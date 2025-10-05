@@ -25,6 +25,7 @@ a {
   text-decoration: none;
 }
 
+/* Flexbox Header */
 header {
   grid-area: header;
   display: flex;
@@ -59,6 +60,7 @@ header {
   background: #ff6600;
 }
 
+/* Intro (главная страница) */
 .intro {
   border: 2px solid #ccc;
   margin: 20px;
@@ -83,6 +85,7 @@ header {
   margin-top: 40px;
 }
 
+/* Flexbox Cards (Каталог) */
 .catalog {
   display: flex;
   flex-wrap: wrap;
@@ -92,7 +95,7 @@ header {
 }
 
 .manga-card {
-  width: 250px; 
+  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -272,13 +275,13 @@ button:hover {
 }
 .stars-input {
   display: flex;
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
   justify-content: start;
   gap: 5px;
 }
 
 .stars-input input {
-  display: none; 
+  display: none;
 }
 
 .stars-input label {
@@ -291,9 +294,8 @@ button:hover {
 .stars-input input:checked ~ label,
 .stars-input label:hover,
 .stars-input label:hover ~ label {
-  color: #ffcc00; 
+  color: #ffcc00;
 }
-
 
 @media (max-width: 768px) {
   .page-layout {
@@ -307,5 +309,125 @@ button:hover {
   .main-nav {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+/* === BOOTSTRAP-INTEGRATION STYLES (для index.html и catalog.html) === */
+
+/*  Карусель  */
+.carousel {
+  max-height: 480px;
+  max-width: 500px;
+  overflow: hidden;
+  align-self: center;
+  border-bottom: 3px solid #ff6600;
+}
+
+.carousel-inner {
+  height: 480px;
+}
+.carousel-item,
+.carousel-item img {
+  height: 100%;
+}
+.carousel-item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel img {
+    height: 300px;
+  }
+}
+
+/*  Bootstrap контейнеры и заголовки  */
+.container h2,
+.container h3 {
+  color: #222;
+  font-weight: 600;
+}
+
+.container p {
+  color: #444;
+}
+
+/*  Bootstrap Cards  */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: #222;
+}
+
+.card-footer {
+  background-color: #fff;
+}
+
+/*  Кнопки Bootstrap  */
+.btn-primary {
+  background-color: #ff6600;
+  border-color: #ff6600;
+}
+
+.btn-primary:hover {
+  background-color: #cc5200;
+  border-color: #cc5200;
+}
+
+/*  Галерея Bootstrap (index)  */
+.gallery img,
+.gallery .img-fluid {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.gallery img:hover,
+.gallery .img-fluid:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*  Footer  */
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
+/*  Адаптивная типографика для Bootstrap страниц  */
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.85rem;
   }
 }
