@@ -3,43 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <title>MangaLib - Каталог</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header id="top-banner">
-      <h1 class="header-section">Каталог Манги</h1>
-      <nav class="main-nav">
-        <a href="index.html">Главная</a>
-        <a href="catalog.html">Каталог</a>
-        <a href="contact.html">Контакты</a>
-        <a href="reviews.html">Отзывы</a>
-      </nav>
-    </header>
 
-    <section class="catalog">
-      <article class="manga-card">
-        <img
-          class="manga-image"
-          src="https://simg.marwin.kz/media/catalog/product/cache/8d1771fdd19ec2393e47701ba45e606d/3/0/kisimoto_m_naruto_kniga_1.jpg"
-          alt="Манга 1"
-        />
-        <h3>Наруто</h3>
-        <p>История молодого ниндзя, мечтающего стать хокаге.</p>
-      </article>
+  <body class="d-flex flex-column min-vh-100">
+    <!--  Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">📚 MangaLib</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <article class="manga-card">
-        <img
-          class="manga-image"
-          src="https://comicvine.gamespot.com/a/uploads/scale_small/11158/111586527/9647758-1399421555-97840.jpg"
-          alt="Манга 2"
-        />
-        <h3>One Piece</h3>
-        <p>Путешествие пиратов за легендарным сокровищем.</p>
-      </article>
-    </section>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reviews.html">Отзывы</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <footer>
-      <p>Abdrakhmanov Daniyar & Boranbayev Danial | SE-2408</p>
+    <!--  Bootstrap Cards Section  -->
+    <main class="flex-grow-1 py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Каталог Манги</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Card 1 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://simg.marwin.kz/media/catalog/product/cache/8d1771fdd19ec2393e47701ba45e606d/3/0/kisimoto_m_naruto_kniga_1.jpg"
+                class="card-img-top"
+                alt="Манга Наруто"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Наруто</h5>
+                <p class="card-text">
+                  История молодого ниндзя, мечтающего стать хокаге.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button class="btn btn-primary btn-sm">Читать</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://comicvine.gamespot.com/a/uploads/scale_small/11158/111586527/9647758-1399421555-97840.jpg"
+                class="card-img-top"
+                alt="Манга One Piece"
+              />
+              <div class="card-body">
+                <h5 class="card-title">One Piece</h5>
+                <p class="card-text">
+                  Путешествие пиратов за легендарным сокровищем.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button class="btn btn-primary btn-sm">Читать</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/7/72/Bleach_cover_01.jpg"
+                class="card-img-top"
+                alt="Манга Bleach"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Bleach</h5>
+                <p class="card-text">
+                  Парень получает силу синигами и борется с монстрами.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button class="btn btn-primary btn-sm">Читать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  Footer  -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+      Abdrakhmanov Daniyar &amp; Boranbayev Danial | SE-2408
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
