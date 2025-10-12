@@ -1,3 +1,75 @@
+.accordion-vjs .item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #fff;
+  overflow: hidden;
+}
+.accordion-vjs .btn-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 1rem;
+  background: #f8f9fa;
+  border: 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.accordion-vjs .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease, padding 300ms ease, opacity 250ms ease;
+  padding: 0 1rem;
+  opacity: 0;
+  background: #fff;
+}
+.accordion-vjs .item.open .content {
+  padding: 0.75rem 1rem 1rem;
+  opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+.overlay.show {
+  display: flex;
+}
+.popup {
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  padding: 1.25rem;
+  position: relative;
+}
+.popup .close-x {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.9rem;
+}
+
+#clock {
+  font-variant-numeric: tabular-nums;
+}
+.accordion-vjs .item.open .content {
+  max-height: 500px;
+  padding: 0.75rem 1rem 1rem;
+  opacity: 1;
+}
 body {
   width: 100%;
   min-height: 100vh;
