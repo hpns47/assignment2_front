@@ -486,6 +486,52 @@ p {
   font-size: 1rem;
 }
 
+/* Тёмная тема */
+.theme-dark {
+  --bs-body-bg: #0f1115;
+  --bs-body-color: #e9eaee;
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+}
+.theme-dark .navbar.bg-dark {
+  background-color: #0b0d12 !important;
+}
+.theme-dark .card {
+  background-color: #171a21;
+  color: #e9eaee;
+}
+
+/* Анимации появления */
+.animate-in {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.animate-in.show {
+  opacity: 1;
+  transform: none;
+  transition: 400ms ease;
+}
+
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* плавное появление новых карточек */
+.animate-in {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.animate-in.appear {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+
 @media (max-width: 768px) {
   h2 {
     font-size: 1.6rem;

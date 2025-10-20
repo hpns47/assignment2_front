@@ -69,8 +69,8 @@ function setupAccordion() {
     const prev = contentEl.style.maxHeight;
     contentEl.style.maxHeight = "none";
     const full = contentEl.scrollHeight + "px";
-    contentEl.style.maxHeight = prev;
-    contentEl.offsetHeight;
+    // contentEl.style.maxHeight = prev;
+    // contentEl.offsetHeight;
     contentEl.style.maxHeight = full;
   };
 
@@ -231,7 +231,6 @@ function setupRegisterValidation() {
 
     if (!ok) return;
 
-    // Имитируем успешную отправку
     alert("Регистрация прошла успешно ");
     form.reset();
   });
@@ -247,3 +246,6 @@ function setupRegisterValidation() {
     });
   });
 }
+
+
+
