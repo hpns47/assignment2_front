@@ -9,10 +9,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
-    <style>
-      
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer src="js/jquery-setup.js"></script>
+    <style></style>
   </head>
 
   <body class="d-flex flex-column min-vh-100 bg-light">
@@ -50,6 +49,25 @@
               <a class="nav-link active" href="faq.html">FAQ</a>
             </li>
           </ul>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+          <label class="text-white-50 small mb-0" for="langSelect">Язык</label>
+          <select id="langSelect" class="form-select form-select-sm w-auto">
+            <option value="ru" selected>RU</option>
+            <option value="en">EN</option>
+            <option value="kz">KZ</option>
+          </select>
+
+          <!-- Dynamic Style Changes -->
+          <button
+            id="themeToggle"
+            class="btn btn-outline-light btn-sm"
+            type="button"
+            aria-pressed="false"
+          >
+            🌙 Тема
+          </button>
         </div>
       </div>
     </nav>
@@ -118,9 +136,7 @@
             <div class="content">
               <p class="mb-0">blablabla?</p>
               <p class="mb-0">lalalala.</p>
-
             </div>
-            
           </div>
         </div>
       </section>
@@ -259,5 +275,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="index-features.js"></script>
   </body>
 </html>

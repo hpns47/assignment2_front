@@ -529,8 +529,180 @@ p {
   transform: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+.toast-msg {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #198754;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: none;
+}
+.stats-section {
+  background: linear-gradient(180deg, #fff, #f8f9fa);
+}
+.count-num {
+  color: #0d6efd;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.toast-msg {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #198754;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 9999;
+}
+.toast-msg.error {
+  background: #dc3545;
+}
 
+/* Добавьте эти стили в ваш style.css */
 
+/* Темная тема */
+body.theme-dark {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+body.theme-dark main,
+body.theme-dark section {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+body.theme-dark .bg-light {
+  background-color: #2b2b2b !important;
+}
+
+body.theme-dark .card {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.theme-dark .card-body,
+body.theme-dark .card-footer {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+}
+
+body.theme-dark .form-control,
+body.theme-dark .form-select,
+body.theme-dark input,
+body.theme-dark textarea,
+body.theme-dark select {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.theme-dark .form-control::placeholder,
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder {
+  color: #888 !important;
+}
+
+body.theme-dark .form-control:focus,
+body.theme-dark .form-select:focus,
+body.theme-dark input:focus,
+body.theme-dark textarea:focus {
+  background-color: #333 !important;
+  color: #e0e0e0 !important;
+  border-color: #666 !important;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark h5,
+body.theme-dark h6 {
+  color: #e0e0e0 !important;
+}
+
+body.theme-dark p,
+body.theme-dark label,
+body.theme-dark .text-muted {
+  color: #b0b0b0 !important;
+}
+
+body.theme-dark .contact-form,
+body.theme-dark .review-form__wrap {
+  background-color: #2b2b2b !important;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+body.theme-dark .review-card {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.theme-dark .popup {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+}
+
+body.theme-dark .accordion-vjs .content {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+}
+
+body.theme-dark .btn-primary {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+}
+
+body.theme-dark .btn-outline-primary {
+  color: #6ea8fe !important;
+  border-color: #6ea8fe !important;
+}
+
+body.theme-dark .btn-outline-primary:hover {
+  background-color: #6ea8fe !important;
+  color: #000 !important;
+}
+
+body.theme-dark .border {
+  border-color: #444 !important;
+}
+
+body.theme-dark .stats-section {
+  background-color: #2b2b2b !important;
+  color: #e0e0e0 !important;
+}
+
+/* Плавный переход между темами */
+body,
+main,
+section,
+.card,
+.form-control,
+input,
+textarea,
+select,
+.btn {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#scrollBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  width: 0%;
+  z-index: 9999;
+}
 
 @media (max-width: 768px) {
   h2 {
