@@ -24,6 +24,7 @@ $(document).ready(function () {
       .filter((s) => s.toLowerCase().includes(val))
       .forEach((s) => list.append(`<li>${s}</li>`));
   });
+  
   $("#suggestions").on("click", "li", function () {
     $("#searchInput").val($(this).text());
     $("#suggestions").empty();

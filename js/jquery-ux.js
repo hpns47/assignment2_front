@@ -1,7 +1,6 @@
 $(document).ready(function () {
   // Task 4 Scroll progress bar
   $(function () {
-    // создаём DOM-элемент напрямую и добавляем в body
     const bar = $("<div>", { id: "scrollBar" }).appendTo("body");
 
     $(window).on("scroll", function () {

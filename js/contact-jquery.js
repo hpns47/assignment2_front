@@ -27,14 +27,12 @@ $(document).ready(function () {
     setTimeout(() => toast.fadeOut(500, () => toast.remove()), 3000);
   }
 
-  // показываем уведомление при успешной отправке
   $("#contactForm").on("submit", function (e) {
     e.preventDefault();
     setTimeout(() => showToast("✅ Форма успешно отправлена!"), 1500);
   });
 
-  //  Task 8: Copy to clipboard 
-  // создадим пример блока с текстом и кнопкой
+  //  Task 8 Copy to clipboard 
   const copyBlock = $(`
     <div class="copy-block container my-4">
       <p id="promoText" class="mb-2">Промокод: <strong>MANGA2025</strong></p>
