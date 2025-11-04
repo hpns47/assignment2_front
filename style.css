@@ -784,6 +784,19 @@ mark {
   color: #fff;
 }
 
+/* Make stats-section follow the theme: when the body has .theme-dark,
+   override the light gradient so the section appears dark instead of white.
+   This ensures sections that were hard-coded with bg-white or have a
+   specific .stats-section background become dark in dark mode. */
+.theme-dark .stats-section {
+  background: linear-gradient(180deg, #121315 0%, #1f1f23 100%) !important;
+  color: #e6e6e6;
+}
+
+.theme-dark .stats-section .count-num {
+  color: #66b0ff; /* lighter accent for counters on dark bg */
+}
+
 /* Подсветка в автокомплите */
 #suggestions li mark {
   background-color: #4caf50;

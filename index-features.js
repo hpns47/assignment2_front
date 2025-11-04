@@ -352,3 +352,31 @@ function setupGalleryHero() {
     playUi();
   });
 }
+
+// Плавная появление элементов с классом .animate-in
+// Если функция отсутствует, вызов в initIndexPage приводил к ошибке и
+// элементы оставались невидимыми (opacity: 0). Здесь используем
+// IntersectionObserver, чтобы по мере появления в вьюпорте добавить класс
+// 'appear' (в CSS уже есть стили для .animate-in.appear).
+function setupScrollAnimations() {
+  const nodes = qsa('.animate-in');
+  if (!nodes.length) return;
+
+  // Поддержка для старых браузеров — если IntersectionObserver отсутствует,
+  // просто покажем элементы через небольшую задержку.
+  if (!('IntersectionObserver' in window)) {
+    nodes.forEach((n, i) => setTimeout(() => n.classList.add('appear'), i * 80));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  nodes.forEach(n => io.observe(n));
+}
