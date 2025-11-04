@@ -704,6 +704,92 @@ select,
   z-index: 9999;
 }
 
+.form-error {
+  color: #030303;
+  background-color: #ed9ea9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border-left: 4px solid #d32f2f;
+}
+
+input.error {
+  border-color: #d32f2f !important;
+  background-color: #fff5f5;
+}
+
+.form-success {
+  color: #21b653;
+  background-color: #98d7aa;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border-left: 4px solid #137333;
+}
+
+mark {
+  background-color: #ffeb3b;
+  color: #000;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+  animation: highlight-fade 0.3s ease-in-out;
+}
+/* Элементы списка */
+#suggestions li {
+  padding: 14px 20px;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+
+
+
+/* Адаптив */
+@media (max-width: 768px) {
+  #searchInput {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  
+  #suggestions li {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  #suggestions li::before {
+    font-size: 18px;
+  }
+}
+
+@keyframes highlight-fade {
+  from {
+    background-color: #ffd700;
+  }
+  to {
+    background-color: #ffeb3b;
+  }
+}
+
+/* Для темной темы */
+.dark-mode mark {
+  background-color: #ff6f00;
+  color: #fff;
+}
+
+/* Подсветка в автокомплите */
+#suggestions li mark {
+  background-color: #4caf50;
+  color: white;
+}
+
 @media (max-width: 768px) {
   h2 {
     font-size: 1.6rem;

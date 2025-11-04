@@ -10,7 +10,7 @@ $(document).ready(function () {
       bar.css("width", scrolled + "%");
     });
   });
-
+$("counter").show();
   // Task 5 Animated number counter
   $(".count-num").each(function () {
     const $this = $(this);

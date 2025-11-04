@@ -25,9 +25,9 @@ document.addEventListener("click", (e) => {
 //  кнопка "Показать ещё"
 const btnMore = document.getElementById("loadMore");
 if (btnMore) {
-  btnMore.addEventListener("click", () => {
-    addExtraCards();
-  });
+  // btnMore.addEventListener("click", () => {
+  //   addExtraCards();
+  // });
 }
 
 // массив с дополнительными карточками
