@@ -59,7 +59,7 @@ $(document).ready(function () {
   }
 
   function createMangaCard(manga) {
-    const title = manga.title || "Без названия";
+    const title = manga.title || "No title";
     const image =
       manga.images?.jpg?.large_image_url ||
       manga.images?.jpg?.image_url ||
@@ -93,13 +93,13 @@ $(document).ready(function () {
             <h5 class="card-title text-truncate" title="${title}">${title}</h5>
             <p class="card-text small text-muted">${synopsis}</p>
             <div class="d-flex justify-content-between align-items-center mt-2">
-              <small class="text-muted">📚 Главы: ${chapters}</small>
+              <small class="text-muted">📚 Chapters: ${chapters}</small>
               <small class="badge bg-info">${status}</small>
             </div>
           </div>
           <div class="card-footer text-center bg-white border-top-0">
             <a href="${url}" target="_blank" class="btn btn-primary btn-sm w-100">
-              Подробнее
+              More...
             </a>
           </div>
         </div>
@@ -137,7 +137,7 @@ $(document).ready(function () {
   });
 
   $("<button>")
-    .text("🔄 Автозагрузка: ВЫКЛ")
+    .text("🔄 Autoload: disabled")
     .addClass(
       "btn btn-sm btn-outline-secondary position-fixed bottom-0 end-0 m-3"
     )
@@ -146,11 +146,11 @@ $(document).ready(function () {
     .on("click", function () {
       autoLoadEnabled = !autoLoadEnabled;
       $(this).text(
-        autoLoadEnabled ? "🔄 Автозагрузка: ВКЛ" : "🔄 Автозагрузка: ВЫКЛ"
+        autoLoadEnabled ? "🔄 Autoload: enabled" : "🔄 Autoload: disabled"
       );
       $(this).toggleClass("btn-outline-secondary btn-success");
       showToast(
-        autoLoadEnabled ? "Автозагрузка включена" : "Автозагрузка выключена"
+        autoLoadEnabled ? "Autoload enabled" : "autoload disabled"
       );
     });
 

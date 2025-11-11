@@ -30,16 +30,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Главная</a>
+              <a class="nav-link active" href="index.html">Main</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="catalog.html">Каталог</a>
+              <a class="nav-link" href="catalog.html">Catalog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Контакты</a>
+              <a class="nav-link" href="contact.html">Contacts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reviews.html">Отзывы</a>
+              <a class="nav-link" href="reviews.html">Reviews</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="faq.html">FAQ</a>
@@ -48,12 +48,12 @@
         </div>
 
         <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
-          <label class="text-white-50 small mb-0" for="langSelect">Язык</label>
+          <!-- <label class="text-white-50 small mb-0" for="langSelect">Язык</label>
           <select id="langSelect" class="form-select form-select-sm w-auto">
             <option value="ru" selected>RU</option>
             <option value="en">EN</option>
             <option value="kz">KZ</option>
-          </select>
+          </select> -->
 
           <!-- Dynamic Style Changes -->
           <button
@@ -62,14 +62,14 @@
             type="button"
             aria-pressed="false"
           >
-            🌙 Тема
+            🌙 Theme
           </button>
         </div>
       </div>
     </nav>
 
     <section class="contact-form container my-5">
-      <h2>Свяжитесь с нами</h2>
+      <h2>Connect with us</h2>
       <form id="contactForm" novalidate>
         <div class="form-error" style="display: none"></div>
         <div
@@ -77,38 +77,38 @@
           style="display: none; color: #137333; margin: 8px 0"
         ></div>
 
-        <label>Имя</label>
-        <input type="text" id="name" placeholder="Иван Иванов" required />
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Ivan Ivanov" required />
 
         <label>Email</label>
         <input type="email" id="email" placeholder="name@mail.com" required />
 
-        <label>Пароль</label>
+        <label>Password</label>
         <input
           type="password"
           id="password"
-          placeholder="Минимум 6 символов"
+          placeholder="mimimum length 6 symbols"
           required
         />
 
-        <label>Подтвердите пароль</label>
+        <label>Confirm password</label>
         <input
           type="password"
           id="confirm"
-          placeholder="Повторите пароль"
+          placeholder="repeat password"
           required
         />
         <br>
         <br>
-        <label>Промокод (необязательно)</label>
+        <label>Promocode (unnecesary)</label>
         <input
           type="text"
           id="promo"
-          placeholder="Введите промокод"
+          placeholder="enter..."
           value="MANGA2025"
         />
 
-        <button type="submit">Отправить</button>
+        <button type="submit">Send</button>
       </form>
     </section>
 

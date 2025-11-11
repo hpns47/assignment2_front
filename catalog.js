@@ -17,7 +17,7 @@ document.addEventListener("click", (e) => {
     if (!p.dataset.full) p.dataset.full = p.textContent.trim();
     const expanded = p.classList.toggle("expanded");
     p.textContent = expanded
-      ? p.dataset.full + "  (нажмите ещё раз, чтобы свернуть)"
+      ? p.dataset.full + "  (click to collapse)"
       : p.dataset.full.split(".")[0] + ".";
   }
 });

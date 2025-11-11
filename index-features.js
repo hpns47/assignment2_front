@@ -97,7 +97,7 @@ function setupThemeToggle() {
     
     // Обновляем кнопку
     btn.setAttribute("aria-pressed", String(isDark));
-    btn.innerHTML = isDark ? "☀️ Светлая" : "🌙 Тёмная";
+    btn.innerHTML = isDark ? "☀️ Bright" : "🌙 Dark";
 
     // Navbar
     const navbar = document.querySelector(".navbar");
@@ -302,7 +302,7 @@ function setupI18nSwitch() {
     },
   };
 
-  const saved = localStorage.getItem("lang") || "ru";
+  const saved = localStorage.getItem("lang") || "en";
   select.value = saved;
   applyLanguage(saved);
 

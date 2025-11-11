@@ -345,11 +345,12 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+/* === СТИЛИ ЗВЁЗД === */
 .stars-input {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: start;
-  gap: 5px;
+  justify-content: flex-end;
+  gap: 4px;
 }
 
 .stars-input input {
@@ -357,17 +358,34 @@ button:hover {
 }
 
 .stars-input label {
-  font-size: 26px;
-  color: #ccc;
+  font-size: 2rem;
   cursor: pointer;
   transition: color 0.2s;
+  color: #888; /* базовый цвет для всех тем */
 }
 
-.stars-input input:checked ~ label,
+/* Подсветка при наведении */
 .stars-input label:hover,
 .stars-input label:hover ~ label {
-  color: #ffcc00;
+  color: #ffcc00 !important;
 }
+
+/* Когда выбрано (checked) */
+.stars-input input:checked ~ label {
+  color: #ffcc00 !important;
+}
+
+/* Если тёмная тема добавляет фильтры или переопределения */
+body.dark-mode .stars-input label {
+  color: #777 !important;
+}
+
+body.dark-mode .stars-input input:checked ~ label,
+body.dark-mode .stars-input label:hover,
+body.dark-mode .stars-input label:hover ~ label {
+  color: #ffcc00 !important;
+}
+
 
 @media (max-width: 768px) {
   .page-layout {
@@ -820,3 +838,4 @@ mark {
     font-size: 0.85rem;
   }
 }
+
